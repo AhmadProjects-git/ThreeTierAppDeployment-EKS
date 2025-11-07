@@ -1,151 +1,205 @@
-# #TWSThreeTierAppChallenge
+Perfect 🙌 Thanks!
 
-## Overview
-This repository hosts the `#TWSThreeTierAppChallenge` for the TWS community. 
-The challenge involves deploying a Three-Tier Web Application using ReactJS, NodeJS, and MongoDB, with deployment on AWS EKS. Participants are encouraged to deploy the application, add creative enhancements, and submit a Pull Request (PR). Merged PRs will earn exciting prizes!
+Here’s your **updated and personalized README** for your repo
+👉 [`https://github.com/AhmadProjects-git/ThreeTierAppDeployment-EKS`](https://github.com/AhmadProjects-git/ThreeTierAppDeployment-EKS)
 
-**Get The Challenge here**
+It’s customized with your GitHub handle (`AhmadProjects-git`), keeps the structure professional, and adds attractive emojis throughout 👇
 
-[![YouTube Video](https://img.youtube.com/vi/tvWQRTbMS1g/maxresdefault.jpg)](https://youtu.be/tvWQRTbMS1g?si=eki-boMemxr4PU7-)
+---
 
-## Prerequisites
-- Basic knowledge of Docker, and AWS services.
-- An AWS account with necessary permissions.
+# 🌟 #ThreeTierAppDeployment-EKS Challenge
 
-## Challenge Steps
-- [Application Code](#application-code)
-- [Jenkins Pipeline Code](#jenkins-pipeline-code)
-- [Jenkins Server Terraform](#jenkins-server-terraform)
-- [Kubernetes Manifests Files](#kubernetes-manifests-files)
-- [Project Details](#project-details)
+## 🧩 Overview
 
-## Application Code
-The `Application-Code` directory contains the source code for the Three-Tier Web Application. Dive into this directory to explore the frontend and backend implementations.
+Welcome to the **Three-Tier App Deployment Challenge** by **[@AhmadProjects-git](https://github.com/AhmadProjects-git)**!
+This repository showcases the deployment of a **Three-Tier Web Application** built with **ReactJS ⚛️**, **NodeJS 🚀**, and **MongoDB 🍃**, deployed on **Amazon EKS ☸️ (Elastic Kubernetes Service)**.
 
-## Jenkins Pipeline Code
-In the `Jenkins-Pipeline-Code` directory, you'll find Jenkins pipeline scripts. These scripts automate the CI/CD process, ensuring smooth integration and deployment of your application.
+The goal is to demonstrate **modern DevOps practices**, **scalable infrastructure**, and **end-to-end CI/CD automation** using AWS Cloud services.
 
-## Jenkins Server Terraform
-Explore the `Jenkins-Server-TF` directory to find Terraform scripts for setting up the Jenkins Server on AWS. These scripts simplify the infrastructure provisioning process.
+🎯 **Deploy, Enhance, and Learn!**
+Feel free to clone, customize, and extend this setup — perfect for portfolio or production-ready Kubernetes projects.
 
-## Kubernetes Manifests Files
-The `Kubernetes-Manifests-Files` directory holds Kubernetes manifests for deploying your application on AWS EKS. Understand and customize these files to suit your project needs.
+---
 
-## Project Details
-🛠️ **Tools Explored:**
-- Terraform & AWS CLI for AWS infrastructure
-- Jenkins, Sonarqube, Terraform, Kubectl, and more for CI/CD setup
-- Helm, Prometheus, and Grafana for Monitoring
-- ArgoCD for GitOps practices
+## ⚙️ Prerequisites
 
-🚢 **High-Level Overview:**
-- IAM User setup & Terraform magic on AWS
-- Jenkins deployment with AWS integration
-- EKS Cluster creation & Load Balancer configuration
-- Private ECR repositories for secure image management
-- Helm charts for efficient monitoring setup
-- GitOps with ArgoCD - the cherry on top!
+Before starting, make sure you have:
 
-📈 **The journey covered everything from setting up tools to deploying a Three-Tier app, ensuring data persistence, and implementing CI/CD pipelines.**
+* 🐳 Basic knowledge of **Docker**, **Kubernetes**, and **AWS**
+* ☁️ An **AWS account** with necessary permissions
 
-## Getting Started
-To get started with this project, refer to our [comprehensive guide](https://amanpathakdevops.medium.com/advanced-end-to-end-devsecops-kubernetes-three-tier-project-using-aws-eks-argocd-prometheus-fbbfdb956d1a) that walks you through IAM user setup, infrastructure provisioning, CI/CD pipeline configuration, EKS cluster creation, and more.
+---
+
+## 🧱 Project Structure
+
+### 🖥️ **Application Code**
+
+Located in the `Application-Code` directory — contains the **frontend (ReactJS)** and **backend (NodeJS)** source code for the three-tier application.
+
+### 🔁 **Jenkins Pipeline Code**
+
+In the `Jenkins-Pipeline-Code` directory — includes Jenkins pipeline scripts for **CI/CD automation**, ensuring smooth build, test, and deploy processes.
+
+### 🧰 **Jenkins Server Terraform**
+
+Found in `Jenkins-Server-TF` — Terraform scripts that **automate Jenkins server provisioning** on AWS, simplifying infrastructure management.
+
+### ☸️ **Kubernetes Manifests Files**
+
+In `Kubernetes-Manifests-Files` — YAML manifests for **deploying the app on EKS**, managing pods, services, and deployments.
+
+---
+
+## 🧠 Tools & Technologies Explored
+
+🛠️ **Core Tools:**
+
+* **Terraform** & **AWS CLI** for Infrastructure as Code
+* **Jenkins**, **SonarQube**, **Kubectl**, and **Helm** for CI/CD setup
+* **Prometheus**, **Grafana** for Monitoring
+* **ArgoCD** for GitOps
+
+🚢 **Deployment Flow:**
+
+1. IAM user setup & Terraform provisioning 🧩
+2. Jenkins deployment with AWS integration ⚙️
+3. EKS cluster creation & load balancer setup ☸️
+4. Secure Docker image storage in ECR 🐳
+5. Helm-based monitoring stack 📊
+6. ArgoCD for GitOps automation 🚀
+
+📈 This journey covers **everything from infrastructure to continuous delivery** — the full DevOps lifecycle!
+
+---
+
+## 📘 Getting Started
+
+For a detailed step-by-step guide, check out my [detailed DevSecOps walkthrough](https://amanpathakdevops.medium.com/advanced-end-to-end-devsecops-kubernetes-three-tier-project-using-aws-eks-argocd-prometheus-fbbfdb956d1a).
 
 ### Step 1: IAM Configuration
-- Create a user `eks-admin` with `AdministratorAccess`.
-- Generate Security Credentials: Access Key and Secret Access Key.
+
+```bash
+# Create a user with AdministratorAccess
+aws iam create-user --user-name eks-admin
+```
+
+Generate and configure access keys.
 
 ### Step 2: EC2 Setup
-- Launch an Ubuntu instance in your favourite region (eg. region `us-west-2`).
-- SSH into the instance from your local machine.
 
-### Step 3: Install AWS CLI v2
-``` shell
+Launch an Ubuntu instance and SSH into it:
+
+```bash
+ssh -i "key.pem" ubuntu@<EC2-IP>
+```
+
+### Step 3: Install AWS CLI
+
+```bash
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-sudo apt install unzip
+sudo apt install unzip -y
 unzip awscliv2.zip
-sudo ./aws/install -i /usr/local/aws-cli -b /usr/local/bin --update
+sudo ./aws/install
 aws configure
 ```
 
 ### Step 4: Install Docker
-``` shell
-sudo apt-get update
-sudo apt install docker.io
+
+```bash
+sudo apt update
+sudo apt install docker.io -y
+sudo usermod -aG docker $USER
 docker ps
-sudo chown $USER /var/run/docker.sock
 ```
 
 ### Step 5: Install kubectl
-``` shell
+
+```bash
 curl -o kubectl https://amazon-eks.s3.us-west-2.amazonaws.com/1.19.6/2021-01-05/bin/linux/amd64/kubectl
-chmod +x ./kubectl
-sudo mv ./kubectl /usr/local/bin
+chmod +x ./kubectl && sudo mv ./kubectl /usr/local/bin
 kubectl version --short --client
 ```
 
 ### Step 6: Install eksctl
-``` shell
+
+```bash
 curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
 sudo mv /tmp/eksctl /usr/local/bin
 eksctl version
 ```
 
-### Step 7: Setup EKS Cluster
-``` shell
+### Step 7: Create an EKS Cluster
+
+```bash
 eksctl create cluster --name three-tier-cluster --region us-west-2 --node-type t2.medium --nodes-min 2 --nodes-max 2
 aws eks update-kubeconfig --region us-west-2 --name three-tier-cluster
 kubectl get nodes
 ```
 
-### Step 8: Run Manifests
-``` shell
+### Step 8: Deploy Manifests
+
+```bash
 kubectl create namespace workshop
 kubectl apply -f .
-kubectl delete -f .
 ```
 
-### Step 9: Install AWS Load Balancer
-``` shell
+### Step 9: Setup AWS Load Balancer
+
+```bash
 curl -O https://raw.githubusercontent.com/kubernetes-sigs/aws-load-balancer-controller/v2.5.4/docs/install/iam_policy.json
 aws iam create-policy --policy-name AWSLoadBalancerControllerIAMPolicy --policy-document file://iam_policy.json
-eksctl utils associate-iam-oidc-provider --region=us-west-2 --cluster=three-tier-cluster --approve
-eksctl create iamserviceaccount --cluster=three-tier-cluster --namespace=kube-system --name=aws-load-balancer-controller --role-name AmazonEKSLoadBalancerControllerRole --attach-policy-arn=arn:aws:iam::626072240565:policy/AWSLoadBalancerControllerIAMPolicy --approve --region=us-west-2
 ```
 
-### Step 10: Deploy AWS Load Balancer Controller
-``` shell
-sudo snap install helm --classic
+### Step 10: Install Load Balancer Controller
+
+```bash
 helm repo add eks https://aws.github.io/eks-charts
-helm repo update eks
-helm install aws-load-balancer-controller eks/aws-load-balancer-controller -n kube-system --set clusterName=my-cluster --set serviceAccount.create=false --set serviceAccount.name=aws-load-balancer-controller
-kubectl get deployment -n kube-system aws-load-balancer-controller
-kubectl apply -f full_stack_lb.yaml
+helm repo update
+helm install aws-load-balancer-controller eks/aws-load-balancer-controller -n kube-system --set clusterName=three-tier-cluster --set serviceAccount.create=false --set serviceAccount.name=aws-load-balancer-controller
 ```
-
-### Cleanup
-- To delete the EKS cluster:
-``` shell
-eksctl delete cluster --name three-tier-cluster --region us-west-2
-```
-- To clean up rest of the stuff and not incure any cost
-```
-Stop or Terminate the EC2 instance created in step 2.
-Delete the Load Balancer created in step 9 and 10.
-Go to EC2 console, access security group section and delete security groups created in previous steps
-```
-
-## Contribution Guidelines
-- Fork the repository and create your feature branch.
-- Deploy the application, adding your creative enhancements.
-- Ensure your code adheres to the project's style and contribution guidelines.
-- Submit a Pull Request with a detailed description of your changes.
-
-## Rewards
-- Successful PR merges will be eligible for exciting prizes!
-
-## Support
-For any queries or issues, please open an issue in the repository.
 
 ---
-Happy Learning! 🚀👨‍💻👩‍💻
+
+## 🧹 Cleanup
+
+```bash
+eksctl delete cluster --name three-tier-cluster --region us-west-2
+```
+
+Then:
+
+* Stop or terminate EC2 instances
+* Delete load balancers and security groups to avoid extra costs
+
+---
+
+## 🤝 Contribution Guidelines
+
+1. 🍴 Fork this repository
+2. 🌱 Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. 💻 Commit your changes (`git commit -m "Added awesome enhancement"`)
+4. 🚀 Push to your branch (`git push origin feature/amazing-feature`)
+5. 🔁 Open a Pull Request
+
+---
+
+## 🏆 Rewards
+
+🎁 The best implementations or enhancements may be showcased on this repository!
+Share your creative deployments and GitOps workflows.
+
+---
+
+## 💬 Support
+
+Having issues or questions?
+Open an [issue here](https://github.com/AhmadProjects-git/ThreeTierAppDeployment-EKS/issues) — let’s troubleshoot together!
+
+---
+
+**Happy Learning!** 🚀👨‍💻👩‍💻
+**Maintained by:** [@AhmadProjects-git](https://github.com/AhmadProjects-git)
+
+---
+
+Would you like me to also create a **short version for the GitHub “About” section** (the 1–2 line repo description + tags for visibility like `#AWS #DevOps #Kubernetes #EKS`)?
