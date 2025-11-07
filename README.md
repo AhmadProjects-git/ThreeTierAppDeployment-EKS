@@ -1,12 +1,3 @@
-Perfect 🙌 Thanks!
-
-Here’s your **updated and personalized README** for your repo
-👉 [`https://github.com/AhmadProjects-git/ThreeTierAppDeployment-EKS`](https://github.com/AhmadProjects-git/ThreeTierAppDeployment-EKS)
-
-It’s customized with your GitHub handle (`AhmadProjects-git`), keeps the structure professional, and adds attractive emojis throughout 👇
-
----
-
 # 🌟 #ThreeTierAppDeployment-EKS Challenge
 
 ## 🧩 Overview
